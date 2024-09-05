@@ -1,0 +1,36 @@
+﻿@model SMS.Models.Delivery
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Delivery</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.delivery_date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.delivery_date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.emp_name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.emp_name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.qnty)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.qnty)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.delivery_id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

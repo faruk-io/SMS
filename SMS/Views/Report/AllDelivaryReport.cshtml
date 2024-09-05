@@ -1,0 +1,43 @@
+﻿@model IEnumerable<SMS.Models.Delivery>
+
+@{
+    ViewData["Title"] = "AllDelivaryReport";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 style="margin-top:100px; margin-left:230px;">Service Management System</h1>
+<h2 style="margin-top:20px;margin-left:190px;">Delivery Details Report - <span style="margin-left:auto;">@DateTime.Now</span></h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Delivery Date")
+            </th>
+            <th>
+                @Html.DisplayName("Employee Name")
+            </th>
+            <th>
+                @Html.DisplayName("Quantity")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.delivery_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.emp_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.qnty)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+

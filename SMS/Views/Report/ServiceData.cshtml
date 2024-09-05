@@ -1,0 +1,78 @@
+﻿@model IEnumerable<SMS.Models.Service>
+
+@{
+    ViewData["Title"] = "ServiceData";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("searchservicedata", "Report", FormMethod.Post))
+{
+    <div class="div">
+        <div class="col-md-2">
+            @Html.TextBox("Data", null, htmlAttributes: new { @class = "form-control", placeholder = "Enter To Search" })
+            <input type="submit" value="Search" class="btn btn-primary" />
+        </div>
+
+    </div>
+}
+
+@Html.ActionLink("View As PDF", "AllServiceData", "Report", htmlAttributes: new { @class = "btn btn-primary" })
+
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Service Po No")
+            </th>
+            <th>
+                @Html.DisplayName("Service Item")
+            </th>
+            <th>
+                @Html.DisplayName("Service Quentity")
+            </th>
+            <th>
+                @Html.DisplayName("Service Date")
+            </th>
+            <th>
+                @Html.DisplayName("Costing Price")
+            </th>
+            <th>
+                @Html.DisplayName("Vendor Name")
+            </th>
+            <th>
+                @Html.DisplayName("Description")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.service_Po_no)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.service_item)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.service_qnty)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.service_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.costing_price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.vendor_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.description)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

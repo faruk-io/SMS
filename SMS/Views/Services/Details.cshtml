@@ -1,0 +1,61 @@
+﻿@model SMS.Models.Service
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Service Details</h1>
+
+<div>
+    <h4>Service</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.service_Po_no)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.service_Po_no)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.service_item)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.service_item)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.service_qnty)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.service_qnty)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.service_date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.service_date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.costing_price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.costing_price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.vendor_name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.vendor_name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.description)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.service_id" class="btn btn-success">Edit</a> |
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+</div>

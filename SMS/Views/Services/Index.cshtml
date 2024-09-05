@@ -1,0 +1,73 @@
+﻿@model IEnumerable<SMS.Models.Service>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Service List</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Service Po No")
+            </th>
+            <th>
+                @Html.DisplayName("Service Item")
+            </th>
+            <th>
+                @Html.DisplayName("Service Quantity")
+            </th>
+            <th>
+                @Html.DisplayName("Service Date")
+            </th>
+            <th>
+                @Html.DisplayName("Costing Price")
+            </th>
+            <th>
+                @Html.DisplayName("Vendor Name")
+            </th>
+            <th>
+                @Html.DisplayName("Description")
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.service_Po_no)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.service_item)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.service_qnty)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.service_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.costing_price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.vendor_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.description)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.service_id" class="btn btn-primary">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.service_id" class="btn btn-success">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.service_id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

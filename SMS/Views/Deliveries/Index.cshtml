@@ -1,0 +1,48 @@
+﻿@model IEnumerable<SMS.Models.Delivery>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Delivery List</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Delivery Date")
+            </th>
+            <th>
+                @Html.DisplayName("Employee Name")
+            </th>
+            <th>
+                @Html.DisplayName("Delivary Quantity")
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.delivery_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.emp_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.qnty)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.delivery_id" class="btn btn-primary">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.delivery_id" class="btn btn-success">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.delivery_id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
